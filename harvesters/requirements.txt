@@ -1,0 +1,47 @@
+# Web framework
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+
+# HTTP client
+httpx==0.28.1
+tenacity==9.0.0
+
+# HTML parsing
+beautifulsoup4==4.13.3
+lxml==5.3.1
+
+# ── Semantic encoding ─────────────────────────────────────────────────────────
+# TextNet: sentence-transformers → 384-dim
+sentence-transformers==3.4.1
+torch==2.6.0          # CPU version; use torch+cuda for GPU
+numpy==2.2.3
+
+# ImageNet + VideoNet: CLIP ViT-B/32 → 512-dim semantic visual vectors
+# "cat" and "feline" close in embedding space
+# Install: pip install open-clip-torch
+open-clip-torch==2.29.0
+
+# Media harvesters
+yt-dlp==2025.2.19
+Pillow==11.1.0
+pydub==0.25.1
+
+# Database
+supabase==2.13.0
+
+# Config
+python-dotenv==1.0.1
+
+# Data quality
+langdetect==1.0.9
+
+# LAMA / HuggingFace datasets (for train_textnet.py --lama)
+datasets>=2.14.0
+
+# Config (datasets_config.yaml)
+PyYAML>=6.0
+
+# Encoder Service: CLAP (text↔audio), Whisper, BLIP
+laion-clap>=0.3.0
+openai-whisper>=20231117
+transformers>=4.40.0

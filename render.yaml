@@ -1,7 +1,7 @@
 ﻿services:
   - type: web
     runtime: docker
-    name: omega-ai-engine
+    name: omega-unified
     dockerfilePath: ./Dockerfile
     healthCheckPath: /health
     envVars:
@@ -10,4 +10,8 @@
       - key: SUPABASE_SERVICE_ROLE_KEY
         sync: false
       - key: AI_ENGINE_API_KEY
+        sync: false
+      - key: ENCODER_SERVICE_URL
+        value: http://localhost:8000/encoder
+      - key: HF_TOKEN
         sync: false

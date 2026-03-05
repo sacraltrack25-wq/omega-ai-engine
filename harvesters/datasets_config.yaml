@@ -1,0 +1,23 @@
+# OMEGA Hugging Face datasets config
+# Автоматическое обучение: .\scripts\train-all.ps1
+# Или: python train_textnet.py --config datasets_config.yaml --batch 8
+#
+# HF_TOKEN (опционально) — для gated datasets. Публичные работают без токена.
+# datasets library скачивает автоматически, кэш: ~/.cache/huggingface/hub
+
+sources:
+  # Факты — LAMA (через --lama trex, не здесь)
+  # QA — контекст + вопрос для лучшего recall
+  - type: huggingface
+    name: squad
+    split: train
+    text_from: [context, question]
+    limit: 15000
+
+  # Широкий веб-текст (осторожно с limit — много данных)
+  - type: huggingface
+    name: HuggingFaceFW/fineweb
+    split: train
+    column: text
+    streaming: true
+    limit: 20000
