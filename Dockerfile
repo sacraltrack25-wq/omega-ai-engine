@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y python3 python3-pip python3-venv ffmpeg
 
 WORKDIR /app
 COPY harvesters/requirements.txt ./harvesters/
-RUN pip3 install --no-cache-dir -r harvesters/requirements.txt
+RUN pip3 install --no-cache-dir --break-system-packages -r harvesters/requirements.txt
 COPY harvesters ./harvesters
 
 COPY --from=node-builder /app/core/dist ./core/dist
